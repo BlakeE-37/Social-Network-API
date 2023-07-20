@@ -20,3 +20,9 @@ const reactionSchema = new Schema({
     }
 });
 
+reactionSchema.virtual('formatTime').get(function () {
+    const date = new Date(this.createdAt);
+    return date.toLocaleDateString();
+});
+
+module.exports = reactionSchema;

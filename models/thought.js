@@ -23,7 +23,7 @@ const thoughtSchema = new Schema({
 thoughtSchema.virtual('formatTime').get(function () {
     const date = new Date(this.createdAt);
     return date.toLocaleDateString();
-})
+});
 
 // getter method that returns the length of the reactions array
 thoughtSchema.virtual('reactionCount').get(function () {
