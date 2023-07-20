@@ -1,1 +1,2 @@
-const user = require('./user');
+const User = require('./user');
+const Thought = require('./thought')
