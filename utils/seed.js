@@ -117,16 +117,36 @@ connection.once('open', async () => {
             email: emails[4],
             thoughts: [user4Thought._id]
         }
-    ]
+    ];
 
     // delete all user data then
     // add user data
     await User.deleteMany({})
     await User.insertMany(userData)
 
-    // testing
-    // const test = await User.findOne().populate('thoughts');
-    // console.log(test)
+    // find each user to use their _id for later
+    const user0 = await User.findOne({ username: usernames[0] })
+    const user1 = await User.findOne({ username: usernames[1] })
+    const user2 = await User.findOne({ username: usernames[2] })
+    const user3 = await User.findOne({ username: usernames[3] })
+    const user4 = await User.findOne({ username: usernames[4] })
+
+    // add friends for each user with _id from above
+    await User.updateOne({ username: usernames[0] }, {
+        friends: [user4._id]
+    });
+    await User.updateOne({ username: usernames[1] }, {
+        friends: [user3._id]
+    });
+    await User.updateOne({ username: usernames[2] }, {
+        friends: [user0._id]
+    });
+    await User.updateOne({ username: usernames[3] }, {
+        friends: [user2._id]
+    });
+    await User.updateOne({ username: usernames[4] }, {
+        friends: [user1._id]
+    });
 
     console.info('Seeding complete! 🌱');
     process.exit(0);
