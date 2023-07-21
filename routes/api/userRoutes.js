@@ -19,6 +19,15 @@ router.get('/:id', async (req, res) => {
     } catch (err) {
         res.statis(500).json(err)
     }
+});
+
+router.post('/', async (req, res) => {
+    try {
+        const data = await User.create(req.body)
+        res.json(data)
+    } catch (err) {
+        res.status(500).json(err)
+    }
 })
 
 module.exports = router;
