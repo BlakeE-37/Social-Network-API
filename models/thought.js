@@ -18,7 +18,13 @@ const thoughtSchema = new Schema({
     },
     reactions: [reactionSchema]
 
-});
+},
+    {
+        toJSON: {
+            getters: true,
+        },
+        id: false,
+    });
 
 // getter method to format 'createdAt' date 
 thoughtSchema.virtual('formatTime').get(function () {
