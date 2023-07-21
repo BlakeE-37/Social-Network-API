@@ -2,7 +2,7 @@ const router = require('express').Router()
 const mongoose = require('mongoose');
 const { User } = require('../../models')
 
-// route to get all users - no populate
+// route to get all users
 router.get('/', async (req, res) => {
     try {
         const data = await User.find()
