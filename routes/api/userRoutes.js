@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
         const data = await User.findById(req.params.id).populate('thoughts').populate('friends')
         res.json(data)
     } catch (err) {
-        res.statis(500).json(err)
+        res.status(500).json(err)
     }
 });
 
