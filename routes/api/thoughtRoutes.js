@@ -45,6 +45,20 @@ router.put('/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err)
     }
-})
+});
+
+// delete route to remove a thought
+router.delete('/:id', async (req, res) => {
+    try {
+        const data = await Thought.findOneAndDelete({ _id: req.params.id })
+        res.json(data)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
+// ---------- Thought Reaction Routes ----------
+
+// 
 
 module.exports = router
