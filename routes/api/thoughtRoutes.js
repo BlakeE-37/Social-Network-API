@@ -37,4 +37,14 @@ router.post('/', async (req, res) => {
     }
 });
 
+// route to update a thought by its ID
+router.put('/:id', async (req, res) => {
+    try {
+        const data = await Thought.updateOne({ _id: req.params.id }, { $set: req.body })
+        res.json(data)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 module.exports = router
