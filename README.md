@@ -3,7 +3,7 @@
 # Social Network API
 
 ## Description
-This project is a backend API for a social network application. I made this project to show my knowledge in MongoDB and the mongoose npm package.
+This project is a backend API for a social network application. I made this project to show my knowledge in MongoDB and the mongoose npm package. This project serves as a beckend API for a social network where you can create users, users can create thoughts, and reactions can be added to each thought.
 
 ## Table of Contents
 * [Installation](#installation)
@@ -14,10 +14,10 @@ This project is a backend API for a social network application. I made this proj
 * [Questions](#questions)
 
 ## Installation
-Clone the repoistory, run ```npm install```, and then ``` npm run seed```.
+Clone the repoistory, run ```npm install```, then ``` npm run seed``` to seed the database, and lastly ```npm start``` to start the server.
 
 ## Usage
-A demo video explaining how to use the application is linked [here]()
+Using a REST client, send http requests to the server. A demo video explaining how to use the application and send http requests is linked [here](https://www.youtube.com/watch?v=WkvTjilfYg8)
 .
 
 ## License
